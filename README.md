@@ -1,5 +1,9 @@
 # SwitchPortViewer
 # 交換器埠配置檢視器
+<img width="1896" height="781" alt="image" src="https://github.com/user-attachments/assets/2bed7910-c257-42f0-bf0e-f09151457733" />
+
+<img width="1803" height="454" alt="image" src="https://github.com/user-attachments/assets/04b1269c-148c-434b-a1a1-21ad704c5bae" />
+
 
 Windows .NET 8 桌面程式，讀取 Aruba/HP ProCurve、HPE Comware、HPE OfficeConnect、Zyxel XGS 配置檔（`.pcc`、`.cfg`、`.conf`、`.txt`、`.log` 或無副檔名）。
 
