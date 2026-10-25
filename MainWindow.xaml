@@ -1,0 +1,41 @@
+<Window x:Class="SwitchPortViewer.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="交換器埠配置檢視器" Width="1280" Height="800" MinWidth="900" MinHeight="600" Background="#F3F6FA" FontFamily="Microsoft JhengHei UI,Segoe UI">
+  <Window.Resources>
+    <Style TargetType="Button"><Setter Property="Cursor" Value="Hand"/><Setter Property="Padding" Value="16,9"/><Setter Property="FontSize" Value="14"/><Setter Property="BorderThickness" Value="0"/></Style>
+  </Window.Resources>
+  <DockPanel>
+    <Border DockPanel.Dock="Top" Background="#142539" Padding="25,20">
+      <Grid>
+        <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+        <StackPanel>
+          <TextBlock Text="交換器埠配置檢視器" FontSize="26" FontWeight="Bold" Foreground="White"/>
+          <TextBlock x:Name="FileLabel" Text="請載入 .pcc 或文字配置檔" Margin="0,6,0,0" Foreground="#C0CEDD" FontSize="13"/>
+        </StackPanel>
+        <Button Grid.Column="1" x:Name="OpenButton" Content="開啟配置檔" Click="OpenButton_Click" Background="#36B6A1" Foreground="#072E32" FontWeight="Bold" VerticalAlignment="Center"/>
+      </Grid>
+    </Border>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+      <StackPanel Margin="25,22,25,30">
+        <Border Background="White" CornerRadius="12" Padding="19,15" Margin="0,0,0,18">
+          <WrapPanel x:Name="SummaryPanel" VerticalAlignment="Center"/>
+        </Border>
+        <Border Background="#1D2B3C" CornerRadius="16" Padding="22,20" Margin="0,0,0,18">
+          <StackPanel>
+            <Grid Margin="0,0,0,18">
+              <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+              <TextBlock x:Name="PanelTitle" Text="實體埠面板" FontSize="19" FontWeight="Bold" Foreground="White"/>
+              <TextBlock Grid.Column="1" Text="上排奇數 · 下排偶數" Foreground="#A9BBCC" FontSize="12"/>
+            </Grid>
+            <StackPanel x:Name="PortGroups"/>
+          </StackPanel>
+        </Border>
+        <TextBlock Text="VLAN 總表" FontSize="18" FontWeight="Bold" Foreground="#142539" Margin="2,0,0,12"/>
+        <StackPanel x:Name="VlanPanel" Margin="0,0,0,18"/>
+        <TextBlock Text="有 Tagged VLAN 的埠" FontSize="18" FontWeight="Bold" Foreground="#142539" Margin="2,0,0,12"/>
+        <WrapPanel x:Name="TaggedPanel" Margin="0,0,0,18"/>
+        <TextBlock Text="埠詳細資料" FontSize="18" FontWeight="Bold" Foreground="#142539" Margin="2,0,0,12"/>
+        <WrapPanel x:Name="DetailsPanel"/>
+        <TextBlock x:Name="NoteLabel" Text="配置檔不包含即時連線狀態；畫面顯示的是設定值。" Foreground="#607187" Margin="2,14,0,0" TextWrapping="Wrap"/>
+      </StackPanel>
+    </ScrollViewer>
+  </DockPanel>
+</Window>
